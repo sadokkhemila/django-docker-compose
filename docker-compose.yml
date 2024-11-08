@@ -2,14 +2,12 @@ version: '3.7'
 
 services:
   django_gunicorn:
+    build: .
     volumes:
       - static:/static
     env_file:
       - .env
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: sample_app:v1
+    build: .
     restart: unless-stopped
     ports:
       - "8000:8000"
