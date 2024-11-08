@@ -8,6 +8,9 @@ services:
       - .env
     build:
       context: .
+      dockerfile: Dockerfile
+    image: sample_app:v1
+    restart: unless-stopped
     ports:
       - "8000:8000"
   nginx:
